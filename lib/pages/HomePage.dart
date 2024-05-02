@@ -5,6 +5,8 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/state_manager.dart';
 import 'package:weather_flutter/service/weather_service.dart';
 
+import '../widget/degree.dart';
+
 class homepage extends StatelessWidget {
   const homepage({super.key});
 
@@ -15,22 +17,87 @@ class homepage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.cloud_sharp),
-          title: Text("Weather App"),
-        ),
-        body: Center(
+        backgroundColor: Colors.deepPurple[100],
+        body: Align(
+          alignment: Alignment.topCenter,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Icon(
-                Icons.location_on,
-                size: 35,
+              SizedBox(height: 20,),
+              Obx(() => Text(weatherService.dataResponse.value['name'] ??'Loading data.....', style: TextStyle(fontSize: 20,),)),
+              degree(),
+              Obx(() => Text(weatherService.dataResponse.isEmpty? "Loading data.....":weatherService.dataResponse.value['weather'][0]['main'], style: TextStyle(fontSize: 20),)),
+              SizedBox(height: 20,),
+              Container(
+                height: 110,
+                width: 350,
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                  borderRadius: BorderRadius.circular(16)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 18.0, left: 8),
+                      child: Column(
+                      children: [
+                        Image(
+                            height: 30,
+                            image: AssetImage('assets/pressure.png')),
+                        Obx(() => Text(weatherService.dataResponse.value['main']['pressure'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
+                        Text("Pressure", style: TextStyle(fontSize: 16, color: Colors.white),),
+                    ],
+                    ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 18.0),
+                      child: Column(
+                      children: [
+                        Image(
+                            height: 30,
+                            image: AssetImage('assets/humidity.png')),
+                        Obx(() => Text(weatherService.dataResponse.value['main']['humidity'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
+                        Text("Humidity", style: TextStyle(fontSize: 16, color: Colors.white),)
+                      ],
+                    ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 18.0, right: 8),
+                      child: Column(
+                      children: [
+                        Image(
+                            height: 30,
+                            image: AssetImage('assets/wind.png')),
+                        Obx(() => Text(weatherService.dataResponse.value['wind']['speed'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
+                        Text("Wind Speed", style: TextStyle(fontSize: 16, color: Colors.white),)
+                      ],
+                    ),
+                    ),
+                  ],
+                ),
               ),
-              Obx(() => Text(weatherService.dataResponse.value['name'] ??'Loading data.....', style: TextStyle(fontSize: 30,),)),
-              Obx(() => Text(weatherService.dataResponse.isEmpty ? "Loading data....." :weatherService.temp1.value.toStringAsFixed(2)+" °C", style: TextStyle(fontSize: 20),)),
-              Obx(() => Text(weatherService.dataResponse.isEmpty? "Loading data.....":weatherService.dataResponse.value['weather'][0]['main'], style: TextStyle(fontSize: 20),
-                  )),
+              SizedBox(height: 15,),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             ],
           ),
         ),
