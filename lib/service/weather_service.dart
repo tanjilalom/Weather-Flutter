@@ -37,7 +37,10 @@ class WeatherService extends GetxController{
       dataResponse.assignAll(decode);
       print(dataResponse);
 
-      temp1.value = dataResponse['main']['temp']/10;
+      temp1.value = dataResponse['main']['temp']/10.roundToDouble();
+
+
+
 
 
 

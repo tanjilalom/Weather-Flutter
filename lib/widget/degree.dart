@@ -29,7 +29,7 @@ class degree extends StatelessWidget {
             padding: EdgeInsets.only(left: 70, top: 90),
             child: Image(
               height: 140,
-              image: AssetImage('assets/lol.png'),
+              image: AssetImage('assets/icons/lol.png'),
             ),
           ),
         ),

@@ -44,7 +44,7 @@ class homepage extends StatelessWidget {
                       children: [
                         Image(
                             height: 30,
-                            image: AssetImage('assets/pressure.png')),
+                            image: AssetImage('assets/icons/pressure.png')),
                         Obx(() => Text(weatherService.dataResponse.value['main']['pressure'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
                         Text("Pressure", style: TextStyle(fontSize: 16, color: Colors.white),),
                     ],
@@ -56,7 +56,7 @@ class homepage extends StatelessWidget {
                       children: [
                         Image(
                             height: 30,
-                            image: AssetImage('assets/humidity.png')),
+                            image: AssetImage('assets/icons/humidity.png')),
                         Obx(() => Text(weatherService.dataResponse.value['main']['humidity'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
                         Text("Humidity", style: TextStyle(fontSize: 16, color: Colors.white),)
                       ],
@@ -68,7 +68,7 @@ class homepage extends StatelessWidget {
                       children: [
                         Image(
                             height: 30,
-                            image: AssetImage('assets/wind.png')),
+                            image: AssetImage('assets/icons/wind.png')),
                         Obx(() => Text(weatherService.dataResponse.value['wind']['speed'].toString() ??'Loading', style: TextStyle(fontSize: 16, color: Colors.white),)),
                         Text("Wind Speed", style: TextStyle(fontSize: 16, color: Colors.white),)
                       ],
