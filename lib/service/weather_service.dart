@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
@@ -10,7 +11,9 @@ class WeatherService extends GetxController{
 
   var dataResponse = {}.obs;
 
-  var temp1 = 0.00.obs;
+  var temp1 = 0.0.obs;
+  var speed1 = 0.0.obs;
+  var visible1 = 0.0.obs;
 
   Future getWeather() async {
     LocationPermission permission;
@@ -38,6 +41,8 @@ class WeatherService extends GetxController{
       print(dataResponse);
 
       temp1.value = dataResponse['main']['temp']/10.roundToDouble();
+      speed1.value = dataResponse['wind']['speed'].roundToDouble();
+      visible1.value = dataResponse['visibility']/1000.roundToDouble();
 
 
 
