@@ -102,7 +102,7 @@ class homepage extends StatelessWidget {
                             Expanded(
                               child: weather_card(
                                 weatherService: weatherService,
-                                image: 'assets/icons/lol.png',
+                                image: 'assets/icons/visibility.png',
                                 title: 'Visibility',
                                 value: weatherService.visible1.value
                                         .toStringAsFixed(0) +
