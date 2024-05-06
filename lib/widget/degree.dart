@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../service/weather_service.dart';
 
 class degree extends StatelessWidget {
@@ -17,19 +16,21 @@ class degree extends StatelessWidget {
         Obx(() => Text(
               weatherService.dataResponse.isEmpty
                   ? ""
-                  : weatherService.temp1.value.toStringAsFixed(0) + "°",
+                  : "${weatherService.temp1.value.toStringAsFixed(0)}°",
               style: TextStyle(
                 fontSize: 150,
                 fontWeight: FontWeight.bold,
               ),
             )),
         Opacity(
-          opacity: 0.7,
+          opacity: 0.9,
           child: Padding(
             padding: EdgeInsets.only(left: 70, top: 90),
             child: Image(
-              height: 140,
-              image: AssetImage('assets/icons/lol.png'),
+              height: 150,
+              width: 300,
+              image: AssetImage(
+                  'assets/weather/${weatherService.dataResponse.value['weather'][0]['icon']}.png'),
             ),
           ),
         ),
