@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import '../service/weather_service.dart';
 
 class weather_card extends StatelessWidget {
+
   weather_card({
     super.key,
     required this.weatherService,
