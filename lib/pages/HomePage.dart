@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:weather_flutter/pages/Splash-Screen.dart';
 import 'package:weather_flutter/service/weather_service.dart';
 import '../widget/degree.dart';
 import '../widget/weather_card.dart';
