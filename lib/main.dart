@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_flutter/pages/Splash-Screen.dart';
-import 'pages/HomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,5 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

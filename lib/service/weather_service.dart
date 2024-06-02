@@ -26,7 +26,6 @@ class WeatherService extends GetxController {
 
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
-    //print("${position.latitude}\n${position.longitude}");
 
     var lat = position.latitude;
     var lon = position.longitude;
@@ -37,13 +36,10 @@ class WeatherService extends GetxController {
     if (response.statusCode == 200) {
       var decode = json.decode(response.body);
       dataResponse.assignAll(decode);
-      //print(dataResponse);
 
       temp1.value = dataResponse['main']['temp'] / 10.roundToDouble();
       speed1.value = dataResponse['wind']['speed'].roundToDouble();
       visible1.value = dataResponse['visibility'] / 1000.roundToDouble();
-
-
 
 
 
