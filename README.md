@@ -27,6 +27,7 @@ The Flutter Weather App is a Basic visually captivating and User Interface for d
 ## Dependencies 📦️
 
 - [get](https://pub.dev/packages/get) - Manage states and inject dependencies.
+- [http](https://pub.dev/packages/http) - Making HTTP requests.
 - [location](https://pub.dev/packages/location) - For easy access to device's location in real-time.
 - [geolocator](https://pub.dev/packages/geolocator) - For getting easy access to platform specific location services.
 - [geocoding](https://pub.dev/packages/geocoding) - Which provides easy geocoding and reverse-geocoding features.
